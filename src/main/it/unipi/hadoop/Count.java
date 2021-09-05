@@ -78,7 +78,7 @@ public class Count {
         List<String> out_links = new LinkedList<>();
         String token = "";
 
-        public void map(final LongWritable key, final Text value, final Context context) throws IOException, Interru$
+        public void map(final LongWritable key, final Text value, final Context context) throws IOException, InterruptedException{
             StringTokenizer itr = new StringTokenizer(value.toString(), "\n");
 
             while (itr.hasMoreTokens()){
@@ -107,7 +107,7 @@ public class Count {
         private String ss = "";
         private Text outputValue = new Text();
 
-        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedExceptio$
+        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
                 int page_number = context.getConfiguration().getInt("page_number", 0);
                 String page_rank = ((double)1/page_number) + "";
 
