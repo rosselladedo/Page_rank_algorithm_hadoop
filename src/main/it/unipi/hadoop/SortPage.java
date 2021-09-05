@@ -41,7 +41,7 @@ public class SortPage {
     public SortPage(String input, String output) {input_file = input; output_file = output;}
 
     public static class SortPageMapper extends Mapper<LongWritable, Text, DoubleWritable, Text> {
-        public void map(final LongWritable key, final Text value, final Context context) throws IOException, Interru$
+        public void map(final LongWritable key, final Text value, final Context context) throws IOException, InterruptedException {
             StringTokenizer itr = new StringTokenizer(value.toString(), "\n");
             //leggiamo una serie di nomepagina:::pagerank:::lista
 
@@ -59,7 +59,7 @@ public class SortPage {
     }
 
     public static class SortPageReducer extends Reducer<DoubleWritable,Text,DoubleWritable,Text>{
-        public void reduce(DoubleWritable key, Text values, Context context) throws IOException, InterruptedExceptio$
+        public void reduce(DoubleWritable key, Text values, Context context) throws IOException, InterruptedException {
             context.write(key, values);
         }
     }
