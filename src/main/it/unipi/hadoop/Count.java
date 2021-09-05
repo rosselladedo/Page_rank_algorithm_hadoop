@@ -1,14 +1,12 @@
 package it.unipi.hadoop;
 
-import org.apache.log4j.Logger;
 import java.util.LinkedList;
 import java.util.List;
-import java.nio.file.Files;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.io.File; 
+import java.io.FileNotFoundException;  
+import java.util.Scanner;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -23,11 +21,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.StringTokenizer;
 
 import static org.junit.Assert.assertEquals;
