@@ -33,14 +33,14 @@ public class RankingCalculation {
 
     public static class RankingCalculationMapper extends Mapper<LongWritable, Text, Text, Text> {
 
-        public void map(final LongWritable key, final Text value, final Context context) throws IOException, Interru$
+        public void map(final LongWritable key, final Text value, final Context context) throws IOException, InterruptedException {
             StringTokenizer itr = new StringTokenizer(value.toString(), "\n");
 
             while(itr.hasMoreTokens()){
                 String token = itr.nextToken();
                 String token_part [] = token.split(":::");
                 String title = token_part[0];
-                String page_rank = "page_rank:" + (double)Double.parseDouble(token_part[1])/(token_part.length - 2);$
+                String page_rank = "page_rank:" + (double)Double.parseDouble(token_part[1])/(token_part.length - 2); //-2 because oyr first two elements are the title and the page_rank values
                 String links = "";
 
                 for (int i = 2; i < token_part.length; i++){
@@ -62,7 +62,7 @@ public class RankingCalculation {
         String links = "";
         String output = "";
 
-        public void reduce(final Text key, final Iterable<Text> value, final Context context) throws IOException, In$
+        public void reduce(final Text key, final Iterable<Text> value, final Context context) throws IOException, InterruptedException {
             int page_number = context.getConfiguration().getInt("page_number", 0);
             double alpha = context.getConfiguration().getDouble("alpha", 0);
 
