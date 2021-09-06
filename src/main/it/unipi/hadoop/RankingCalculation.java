@@ -53,11 +53,10 @@ public class RankingCalculation {
 
     public static class RankingCalculationReducer extends Reducer<Text, Text, Text, Text> {
 
-        Double page_rank = 0.0;
-        String links = "";
-        String output = "";
-
         public void reduce(final Text key, final Iterable<Text> value, final Context context) throws IOException, InterruptedException {
+            Double page_rank = 0.0;
+            String links = "";
+            String output = "";
             int page_number = context.getConfiguration().getInt("page_number", 0);
             double alpha = context.getConfiguration().getDouble("alpha", 0);
 
