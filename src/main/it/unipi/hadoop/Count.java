@@ -36,8 +36,7 @@ public class Count {
         String str = "";
         String findStr = "<title>";
         int lastIndex = 0;
-        //str = Files.readString(java.nio.file.Paths.get(input_file));
-
+        
         try {
 
             Scanner scanner = new Scanner(new File(input_file));
