@@ -108,8 +108,6 @@ public class Count {
     }
 
     public boolean run(final int page_number) throws Exception {
-        //final String output = baseOutput + OUTPUT_PATH;
-
         // set configurations
         final Configuration conf = new Configuration();
         conf.set("mapred.textoutputformat.separator", ":::"); // set OUTPUT_SEPARATOR as separator
