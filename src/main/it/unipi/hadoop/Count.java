@@ -11,7 +11,6 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -62,7 +61,6 @@ public class Count {
     }
 
     public static class CountMapper extends Mapper<LongWritable, Text, Text, Text> {
-        private IntWritable num = new IntWritable();
         private Text title = new Text();
         private Text links = new Text();
         private String titolo = "";
@@ -91,9 +89,7 @@ public class Count {
         }
     }
 
-    public static class CountReducer extends Reducer<Text,Text,Text,Text>
-    {
-        private IntWritable result = new IntWritable();
+    public static class CountReducer extends Reducer<Text,Text,Text,Text> {
         private static List<String> links;
         private String ss = "";
         private Text outputValue = new Text();
