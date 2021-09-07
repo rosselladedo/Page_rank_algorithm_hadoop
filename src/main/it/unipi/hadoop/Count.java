@@ -24,8 +24,6 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-import static org.junit.Assert.assertEquals;
-
 public class Count {
 
     private String input_file = "";
