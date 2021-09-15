@@ -23,12 +23,12 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class Count {
+public class CountAndRankLinksEmitter {
 
     private String input_file = "";
     private String output_file = "";
 
-    public Count(String input, String output) {input_file = input; output_file = output;}
+    public CountAndRankLinksEmitter(String input, String output) {input_file = input; output_file = output;}
 
     public int pageNumber() {
         int count = 0;
