@@ -25,7 +25,7 @@ public class PageRank {
         String output_rank = output + "/rank";
         String output_sort = output + "/sort";
 
-        Count c = new Count(input, output_count);
+        CountAndRankLinksEmitter c = new CountAndRankLinksEmitter(input, output_count);
         pagenumber = c.pageNumber();
         c.run(pagenumber);
 
